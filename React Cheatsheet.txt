@@ -30,4 +30,20 @@ Sticky elements -> If you want an element to be present in every page (NavBar) y
 Link -> Use the <Link> tag instead of the <a> tag in order for react to intercept the request to the server. The <Link> tag has a to="" property instead of a href=""
 Router v5 -> Can match parsial urls to paths so use the property exact
 Unmounted component fetch -> If there is an async function, that changes the state, running on a component which unmounts (the page changes) then there is an error
-Aborting Fetch -> You can link a AbortController to a fetch request to be able to stop it before it finished
+Cleanup function -> The function given as an argument to the useEffect methon can return a function to be run when the component unmounts
+Aborting Fetch -> You can link a AbortController to a fetch request to be able to stop it before it finished. The fetch function can take parameters from an object given as the second parameter
+Fetch + AbortController -> fetch(url, { signal : AbortController.signal })
+Anonymous functions -> Use anonymous functions to invoke named functions, when a function needs to be given as an argument or be returned
+Route path parameters -> Use can add a parameter to a router path using the colon
+e.g. <Route exact path="/blogs/:id"> the id is a variable now
+Using the route parameters -> The use params hook returns an object containing the url parameters 
+State -> State is a variable whose change triggers a rerender
+Variable to Input -> You can set the value property of an input to equal a variable via ta { JS } syntax
+Input to variable -> You can set the onChange property of an input to a function that updates a variable
+Reference to the input -> You get a reference to the input via the target field of the event object
+POST request -> You can use the fetch api to make POST requests by specifing the method field on the second argument to be "POST", the headers to be { "Content-Type": "application/json" } and the body to be JSON.stringify(dataObject)
+fetch(url, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(dataObject)
+})
