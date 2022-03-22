@@ -1,0 +1,33 @@
+npx create-react-app [AppName] -> create project
+npm install -> install dependencies from packages.json
+npm start -> serve website
+Components -> Functions named with a capital letter at the start that return JSX
+Dynamic Content -> Variables in {} inside the JSX
+Links -> By default relative, use "https://" to make them absolute (go to other sites)
+Style -> Can be assigned dynamically via a JS object
+Pass arguments on event handlers -> The handler must me an anonymous function with on arguments that calls a function that has arguments
+Event object -> Only the event handler with no arguments gets it
+State -> [referenceToStateVariable, functionToChange] = useState(initialValueOfAnyType)
+Specifing list items -> Use key property in JSX to reference items created iteratively
+Props -> A way to pass arguments from a parent to a child element. Pass the data as a property to the child element from the parent JSX and receive it on the child component from the props argument
+array.map (ngFor*) -> Give a function as an argument that takes as an argument an array element and outputs something in relation to that element (create a new array of elements)
+array.filter -> Give a function as an argument that takes as an argument an array element and outputs true or false in relation to that element (limit the elements in the array)
+Changing state in a different element ->  If you want an element to change the state defined in a parent element, it should be given the state updating function as a prop
+If you change the state in one element all the element that use it are affected
+useEffect() -> Take as an argument a function that should be call each time an element renders (state changes) e.g. can be used to communicate with a server
+useEffect Dependencies -> The useEffect function takes as a second argument an array of state variable whose change invokes the function given in the first argument
+avoid useEffect-setState infinate loop -> The state you are setting must not be a dependency of the useEffect
+initialState -> Set the initial state in useState to be of the value you expect to set it
+JSX -> It's not exactly returned to be rendered once its evaluated it is rendered
+conditionalTemplates (ngIf*) -> {condition && JSX}
+conditionalTemplates (ngIf* else) -> You can use a ternary expression to show different templates according to a condition e.g. (condition) ? JSX1 : JSX2
+sleep -> setTimeout(functionToRun, timeInMs)
+FetchAPI -> When fetching a resource you need two then callbacks e.g. fetch(url).then(res => res.json()).then(data=>data).catch(err=>console.log(err.message))
+Fetch Errors -> The catch callback also responds to the Errors thrown inside the then functions
+json-server -> npx json-server --watch <json file location> --port <port>
+Routing -> Everything is incased in the <BrowserRouter> tag. The part you want to change as the pages change is the <Switch> tag and in contains <Route> tags
+Sticky elements -> If you want an element to be present in every page (NavBar) you can put in outside the <Switch> tag
+Link -> Use the <Link> tag instead of the <a> tag in order for react to intercept the request to the server. The <Link> tag has a to="" property instead of a href=""
+Router v5 -> Can match parsial urls to paths so use the property exact
+Unmounted component fetch -> If there is an async function, that changes the state, running on a component which unmounts (the page changes) then there is an error
+Aborting Fetch -> You can link a AbortController to a fetch request to be able to stop it before it finished
