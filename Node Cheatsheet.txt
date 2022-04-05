@@ -2,4 +2,22 @@ setTimeout -> Run the function given as the first argument after the duration gi
 setInterval -> Run the function given as the first argument every amount of seconds given as the second argument
 module.exports -> The require method returns the object defined as the module.exports in the given file
 require() -> All code in the file given to the requires method is run
-readStream.on() -> set callbacks on events froms the stream. The "data" event is fired everytime new data reach the stream
+readStream.on() -> set callbacks on events from the stream. The "data" event is fired every time new data reach the stream
+npm init -> Initialise package.json
+lodash -> Utilities: 
+		_.random(min, max) (returns random number) 
+		_.once(function) (allow the function within run only once and nothing happens on subsequent calls)
+http -> The http module is used for setting up a server
+http.createServer(callbackFunction) -> Creates a server object which runs the callback function each time in gets a request
+Request -> We can access the request we got from the first argument given to the callback function
+		Request.url() (returns the relative path accessed)
+Response -> We can create a response to the request using the second argument given to the callback function
+		Response.write() (writes to the response body)
+		Response.setHeaders(key, value) (adds a key-value pair to the response headers)
+		Response.statusCode (the status code that the response will have)
+		Response.end() (Sends the response)
+Start server -> server.listen(port, hostname, callbackFunction) sets the server to listen on the given port and calls the callbackFunction once everything is set up
+
+-------- Express ---------
+Create App -> app = express()
+Start Server -> app.listen(port)
