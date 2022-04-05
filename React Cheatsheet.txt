@@ -47,3 +47,4 @@ fetch(url, {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(dataObject)
 })
+Shuffling -> The sort method of an array takes in an anonymous function that given 2 objects of the array returns a positive or negative number. To shuffle make the number random
