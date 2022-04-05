@@ -1,0 +1,5 @@
+setTimeout -> Run the function given as the first argument after the duration given as the second
+setInterval -> Run the function given as the first argument every amount of seconds given as the second argument
+module.exports -> The require method returns the object defined as the module.exports in the given file
+require() -> All code in the file given to the requires method is run
+readStream.on() -> set callbacks on events froms the stream. The "data" event is fired everytime new data reach the stream
