@@ -21,3 +21,9 @@ Start server -> server.listen(port, hostname, callbackFunction) sets the server 
 -------- Express ---------
 Create App -> app = express()
 Start Server -> app.listen(port)
+Accept GET requests -> app.get(url, callbackFunction) the callback function accepts as the first argument the request and as the second the response
+response.send() -> Works like response.write() + response.end() but also infers the content-type header and the status code
+Send html file -> response.sendFile(path, options) (the path is absolute by default, can change from the options)
+Redirecting -> response.redirect(newUrl)
+Checking order -> The app.get() methods work much like the cases of a switch statement. The app checks the urls from top to bottom and stops when it finds an app.get() callback matching the requests url. The app.use() callback at the bottom is like a default statement and works like a wildcard (runs for every url, thats why it should be at the bottom)
+Set status code -> response.status(code) (returns the response object)
