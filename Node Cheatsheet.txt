@@ -27,3 +27,10 @@ Send html file -> response.sendFile(path, options) (the path is absolute by defa
 Redirecting -> response.redirect(newUrl)
 Checking order -> The app.get() methods work much like the cases of a switch statement. The app checks the urls from top to bottom and stops when it finds an app.get() callback matching the requests url. The app.use() callback at the bottom is like a default statement and works like a wildcard (runs for every url, thats why it should be at the bottom)
 Set status code -> response.status(code) (returns the response object)
+Middleware -> Code that runs between a request and a response. The app.get() and app.use() methods are Middleware. They run serially until one sends a response or exits the app
+Code for every request -> If you want some code to run for every request before determining the path (logging, connection to db, user auth) you can put app.use() methods at the top as long as they dont send any responses to the client and they call the function given as a third argument to the callback function (next)
+morgan() -> Third party logger Middleware
+		const morgan = require("morgan")
+		app.use(morgan())
+Static Files -> Files in the server that are accessible to the client, through their path, without explicitly sending them as a response
+Set folder with static files -> app.use(express.static(folderPath))
