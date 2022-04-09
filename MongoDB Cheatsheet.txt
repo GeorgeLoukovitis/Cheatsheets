@@ -1,0 +1,19 @@
+Structure -> MongoDB is a NoSQL database, meaning that it has collections which contain documents instead of tables. Documents are structured like JSON files. 1 collection per table 1 document per record
+Nested Documents -> A document can have a property which is also a document or an array of documents
+Turn Service On/Off -> Type Services on the Windows search bar, open the app and find the MongoDB service
+----------- MongoDB Shell -----------------
+Select Database -> use databaseName (the database doesn't need to already exist)
+Show Databases -> show dbs
+Show Collections of the selected database -> show collections
+Reference Database -> The selected database is stored in the variable db
+Printing variables -> You can print a variable by typing it's name
+Add a document -> Collection.insertOne(documentAsObject) (if the collection doesn't already exists it's gonna be created)
+Add many documents -> Collection.insertMany(arrayOfDocumentsAsObjects) (if the collection doesn't already exists it's gonna be created)
+Show collection -> Collection.find() (first 20 - there is also the findOne variant) 
+Filter output -> Collection.find({ field1: value1, field2: value2 })
+Select specific fields of the filtered output -> Collection.find({ field1: value1, field2: value2 }, { field1: 1, field2: 1 }) (give an object mapping wanted fields to 1 as the second argument)
+Collection.find() return type -> Collection
+Collection.findOne() return type -> Document
+Count the documents of a collection -> Collection.count()
+Limit the amount of documents in a collection -> Collection.limit(number)
+Sort the documents of a collection -> Collection.sort({ fieldToOrderBy: 1 }) (Change 1 to -1 for DESC order)
