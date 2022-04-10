@@ -34,3 +34,5 @@ morgan() -> Third party logger Middleware
 		app.use(morgan())
 Static Files -> Files in the server that are accessible to the client, through their path, without explicitly sending them as a response
 Set folder with static files -> app.use(express.static(folderPath))
+Access path parameters -> Request.params.paramName e.g. /books/:id
+Fetch for node -> Node doesn't have the fetch api by default yet. Install the node-fetch package (npm i node-fetch@2)

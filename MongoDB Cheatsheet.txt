@@ -1,7 +1,7 @@
 Structure -> MongoDB is a NoSQL database, meaning that it has collections which contain documents instead of tables. Documents are structured like JSON files. 1 collection per table 1 document per record
 Nested Documents -> A document can have a property which is also a document or an array of documents
 Turn Service On/Off -> Type Services on the Windows search bar, open the app and find the MongoDB service
------------ MongoDB Shell -----------------
+----------- MongoDB Shell ----------- 
 Select Database -> use databaseName (the database doesn't need to already exist)
 Show Databases -> show dbs
 Show Collections of the selected database -> show collections
@@ -32,3 +32,36 @@ Remove a value from an array field -> Use $pull instead of $inc on update Collec
 	e.g. db.books.updateMany({title: "Gay"}, {$pull: {genres:"discovery"}})
 Add a value from an array field -> Use $push instead of $pull on update Collection.updateMany(filterObject, { $push: { arrayField: valueToRemove } })
 	e.g. db.books.updateMany({title: "Gay"}, {$push: {genres:"religion"}})
+----------- API (+ Express) ----------- 
+Send JSON -> Respone.json(object)
+Import MongoDb -> const {MongoClient} = require("mongodb")
+Connect to database -> MongoClient.connect(connectionString) (returns Promise)
+	e.g. MongoClient.connect('mongodb://localhost:27017/bookstore')
+    		.then((client)=>{
+      	    let dbConnection = client.db()
+      	    return dbConnection
+    		})
+Access a Collection -> db.collection(collectionName)
+Get documents ->  db.collection(collectionName)
+				.find(filterObject)
+				.sort(orderCriteriaObject)
+				.forEach(document => actionWithDocument)
+				.then(promiseCompletionCallback)	
+		e.g.	db.collection("books")
+    				.find({rating: { $gte: 8 }})
+    				.sort({author: 1})
+    				.forEach(book => books.push(book))
+    				.then(()=>{
+      			  res.status(200).json(books)
+    				})
+    				.catch((err)=>{
+      			  console.log(err)
+    				})
+Get a document ->  db.collection("books")
+  				.findOne({_id: ObjectId(bookId)})
+  				.then(doc => {
+  				  res.status(200).json(doc)
+  				})
+  				.catch((err)=>{
+  				  res.status(500).json({error: "Can find Document"})
+  				})
