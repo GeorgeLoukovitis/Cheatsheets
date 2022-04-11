@@ -1,7 +1,7 @@
 setTimeout -> Run the function given as the first argument after the duration given as the second
 setInterval -> Run the function given as the first argument every amount of seconds given as the second argument
 module.exports -> The require method returns the object defined as the module.exports in the given file
-require() -> All code in the file given to the requires method is run
+require() -> All code in the file given to the require method is run
 readStream.on() -> set callbacks on events from the stream. The "data" event is fired every time new data reach the stream
 npm init -> Initialise package.json
 lodash -> Utilities: 
@@ -36,3 +36,19 @@ Static Files -> Files in the server that are accessible to the client, through t
 Set folder with static files -> app.use(express.static(folderPath))
 Access path parameters -> Request.params.paramName e.g. /books/:id
 Fetch for node -> Node doesn't have the fetch api by default yet. Install the node-fetch package (npm i node-fetch@2)
+Send JSON -> Respone.json(object)
+
+-------- Mongoose ---------
+Create a Schema -> schema = new mongoose.Schema({
+					field1: fieldAttributesObject1	e.g. {type: String, required: true}
+					field2: fieldAttributesObject2
+					...
+				    })
+Schema -> Defined the structure of our documents
+Model -> Surrounds that with a Collection
+Create Model -> mongoose.model(collectionNameInSingular, schema) (if the collection already exists it finds it)
+mongoose.model() -> Return Type: Constructor to create a document in the specified collection
+Create a document -> document = new returnedModel()
+Inserting Documents -> Document.save() (returns Promise that returns the inserted object)
+Read Collection -> returnedModel.find() (returns Promise that returns collection in json)
+Read Single Document -> returnedModel.findById() (returns Promise that returns collection in json)
