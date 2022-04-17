@@ -37,7 +37,8 @@ Set folder with static files -> app.use(express.static(folderPath))
 Access path parameters -> Request.params.paramName e.g. /books/:id
 Fetch for node -> Node doesn't have the fetch api by default yet. Install the node-fetch package (npm i node-fetch@2)
 Send JSON -> Respone.json(object)
-
+Access POST body -> app.use(express.json())
+Accept POST requests -> app.post(url, callbackFunction) the callback function accepts as the first argument the request and as the second the response
 -------- Mongoose ---------
 Create a Schema -> schema = new mongoose.Schema({
 					field1: fieldAttributesObject1	e.g. {type: String, required: true}
